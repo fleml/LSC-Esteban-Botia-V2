@@ -1,0 +1,11 @@
+# ignorar imágenes pesadas del backend
+/backend/datasets/**/*.png
+/backend/datasets/**/*.jpg
+/backend/datasets/**/*.jpeg
+/backend/datasets/**/*.bmp
+
+# ignorar cualquier otra carpeta temporal o de cache
+__pycache__/
+*.log
+*.tmp
+*.bak
