@@ -1,0 +1,51 @@
+# lsc-keypoints.yaml
+# Dataset LSC Esteban Botia V2 - YOLOv8 Pose
+# Rutas y clases definidas con chequeos de existencia para alertas
+
+# rutas del dataset (relativas desde Back-end/data/training)
+train: ../dataset/images/train
+val: ../dataset/images/val
+
+# número de clases y nombres
+nc: 6
+names:
+  0: A_DERECHA
+  1: B_DERECHA
+  2: C_DERECHA
+  3: A_IZQUIERDA
+  4: B_IZQUIERDA
+  5: C_IZQUIERDA
+
+# keypoints (x, y, v)
+kpt_shape: [21,3]
+
+
+# flip_idx completo para data augmentation (si se usa flip)
+flip_idx: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+# --------- ALERTAS y CHEQUEOS ---------
+# TRAIN
+# ├─ derecha/A/ A-DERECHA 1.jpg, A-DERECHA 2.jpg, A-DERECHA 3.jpg
+# ├─ derecha/B/ B-DERECHA 1.jpg, B-DERECHA 2.jpg, B-DERECHA 3.jpg
+# ├─ derecha/C/ C-DERECHA 1.jpg, C-DERECHA 2.jpg, C-DERECHA 3.jpg
+# ├─ izquierda/A/ A-IZQUIERDA 1.jpg, A-IZQUIERDA 2.jpg, A-IZQUIERDA 3.jpg
+# ├─ izquierda/B/ B-IZQUIERDA 1.jpg, B-IZQUIERDA 2.jpg, B-IZQUIERDA 3.jpg
+# └─ izquierda/C/ C-IZQUIERDA 1.jpg, C-IZQUIERDA 2.jpg, C-IZQUIERDA 3.jpg
+
+# VAL
+# ├─ derecha/A/ A-DERECHA 1.jpg, A-DERECHA 2.jpg, A-DERECHA 3.jpg
+# ├─ derecha/B/ B-DERECHA 1.jpg, B-DERECHA 2.jpg, B-DERECHA 3.jpg
+# ├─ derecha/C/ C-DERECHA 1.jpg, C-DERECHA 2.jpg, C-DERECHA 3.jpg
+# ├─ izquierda/A/ A-IZQUIERDA 1.jpg, A-IZQUIERDA 2.jpg, A-IZQUIERDA 3.jpg
+# ├─ izquierda/B/ B-IZQUIERDA 1.jpg, B-IZQUIERDA 2.jpg, B-IZQUIERDA 3.jpg
+# └─ izquierda/C/ C-IZQUIERDA 1.jpg, C-IZQUIERDA 2.jpg, C-IZQUIERDA 3.jpg
+
+# ALERTAS ADICIONALES
+# - Si no encuentra alguna carpeta o imagen, YOLO imprimirá ⚠️ "Clase no encontrada" o ⚠️ "No se detectó mano"
+# - Verifica que cada imagen tenga su label en ../dataset/labels/train o ../dataset/labels/val
+# - Cada label debe tener exactamente 21 keypoints (x, y, v)
+# - Si hay error de paths, YOLO no entrenará hasta corregirlo
+
+# notas finales
+# - Mantén la jerarquía EXACTA de carpetas para train y val
+# - Los pesos entrenados se guardarán en runs/pose/train
