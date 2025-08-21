@@ -1,11 +1,31 @@
-# ignorar imágenes pesadas del backend
-/backend/datasets/**/*.png
-/backend/datasets/**/*.jpg
-/backend/datasets/**/*.jpeg
-/backend/datasets/**/*.bmp
+# ======================
+# BACKEND
+# ======================
 
-# ignorar cualquier otra carpeta temporal o de cache
-__pycache__/
+# entorno virtual python
+backend/.venv/
+
+# cachés de python
+**/__pycache__/
+*.pyc
+
+# logs y temporales
 *.log
 *.tmp
 *.bak
+
+# datasets pesados (imágenes)
+backend/datasets/**/*.png
+backend/datasets/**/*.jpg
+backend/datasets/**/*.jpeg
+backend/datasets/**/*.bmp
+
+# pesos de modelos
+backend/weights/
+
+# ======================
+# FRONTEND
+# ======================
+
+# node modules
+frontend/node_modules/
